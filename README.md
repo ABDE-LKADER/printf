@@ -5,13 +5,13 @@
 
 <p>To create our custom printf function, We need to plan out how it will work. We can create a flowchart to help us visualize the logic of the function. Here is an example of a simple flowchart for printf:</p>
 
-<p>start -> read format string -> while format string not empty -></p>
-<p>parse next format specifier -> output text before specifier -></p>
-<p>if specifier is %d -> output decimal number</p>
-<p>if specifier is %s -> output string</p>
-<p>if specifier is %c -> output character</p>
-<p>if specifier is %% -> output %</p>
-<p>if specifier is unknown -> output error</p>
-<p>end loop -> output remaining text -> end</p>
+<li>start -> read format string -> while format string not empty -></li>
+<li>parse next format specifier -> output text before specifier -></li>
+<li>if specifier is %d -> output decimal number</li>
+<li>if specifier is %s -> output string</li>
+<li>if specifier is %c -> output character</li>
+<li>if specifier is %% -> output %</li>
+<li>if specifier is unknown -> output error</li>
+<li>end loop -> output remaining text -> end</li>
 
 <p>In this project, we will use our knowledge of C and the concepts of pair programming, flowcharts, and technical writing to create a custom printf function. We will work together as a team to write high-quality code and documentation. By the end of the project, we will have a better understanding of how printf works and how to create our own custom functions in C.</p>
