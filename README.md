@@ -14,4 +14,6 @@
 <li>if specifier is unknown -> output error</li>
 <li>end loop -> output remaining text -> end</li>
 
-<p>In this project, we will use our knowledge of C and the concepts of pair programming, flowcharts, and technical writing to create a custom printf function. We will work together as a team to write high-quality code and documentation. By the end of the project, we will have a better understanding of how printf works and how to create our own custom functions in C.</p>
+<p>
+
+In this project, we will use our knowledge of C and the concepts of pair programming, flowcharts, and technical writing to create a custom printf function. We will work together as a team to write high-quality code and documentation. By the end of the project, we will have a better understanding of how printf works and how to create our own custom functions in C.</p>
