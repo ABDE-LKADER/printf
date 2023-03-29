@@ -1,5 +1,5 @@
 <h5>PARTNERS:</h5>
-<h6>ABDEL-KADER WITH USERNAME</h6>
+<h6>ABDEL-KADER WITH EL-ZAKARIA</h6>
 
 <p>In this project, We will create a printf function that can output formatted text to the console. printf is a very powerful function that can format text in many ways. It is a core function of the C standard library, And almost every C program uses it at some point. Our goal is to create a custom version of this function</p>
 
