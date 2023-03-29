@@ -1,96 +1,51 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#include "main.h"
+#include <string.h>
 
 /**
  * _printf - Custom printf function
- * 
- * @format: Format string
  *
- * Return: Number of characters printed
+ * @format: Input String
+ *
+ * Return: Depend Condition
  */
-
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0, count = 0;
-	char *str;
 	va_list args;
-
-	if (format == NULL)
-		return (-1);
+	int i = 0, printed_chars = 0;
+	char *str, c;
 
 	va_start(args, format);
-	
-	while (format[i])
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '\0')
-				return (-1);
 			if (format[i] == 'c')
 			{
-				char c = va_arg(args, int);
-				write(1, &c, 1);
-				count++;
+				c = va_arg(args, int);
+				printed_chars += write(1, &c, 1);
 			}
 			else if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
-				if (str == NULL)
+				if (!str)
 					str = "(null)";
-				while (str[j])
-				{
-					write(1, &str[j], 1);
-					count++;
-					j++;
-				}
-				j = 0;
+				printed_chars += write(1, str, strlen(str));
+			}
+			else if (format[i] == '%')
+			{
+				printed_chars += write(1, "%", 1);
 			}
 			else
 			{
-				char *num_str;
-				int num = va_arg(args, int);
-				int len = 0;
-
-				if (num == 0)
-				{
-					write(1, "0", 1);
-					count++;
-				}
-				else
-				{
-					while (num > 0)
-					{
-						num /= 10;
-						len++;
-					}
-
-					num_str = malloc(sizeof(char) * (len + 1));
-					if (num_str == NULL)
-						return (-1);
-					num_str[len] = '\0';
-					num = va_arg(args, int);
-					while (num > 0)
-					{
-						len--;
-						num_str[len] = (num % 10) + '0';
-						num /= 10;
-					}
-
-					write(1, num_str, len + 1);
-					count += len + 1;
-					free(num_str);
-				}
+				printed_chars += write(1, &format[i - 1], 1);
+				printed_chars += write(1, &format[i], 1);
 			}
-			}
-			else
-			{
-			write(1, &format[i], 1);
-			count++;
-			}
+		}
+		else
+			printed_chars += write(1, &format[i], 1);
 		i++;
 	}
 	va_end(args);
-	return (count);
+	return (printed_chars);
 }
