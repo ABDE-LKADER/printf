@@ -1,9 +1,12 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINT_H
+#define PRINT_H
 
-#include <stdarg.h>
 #include <unistd.h>
+#include <stdarg.h>
+#include <stdlib.h>
 
 int _printf(const char *format, ...);
+int _put(char c);
+int _puts(char *s);
 
 #endif
