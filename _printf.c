@@ -23,6 +23,8 @@ int _printf(const char *format, ...)
 				printed += _put(va_arg(list, int));
 			else if (format[i] == 's')
 				printed += _puts(va_arg(list, char *));
+			else if (format[i] == '%')
+				printed += _put('%');
 			else
 				printed += _put(format[i]);
 		}
