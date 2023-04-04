@@ -24,7 +24,9 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 				printed += _puts(va_arg(list, char *));
 			else if (format[i] == 'd' || format[i] == 'i')
-				printed = put_int(va_arg(list, int));
+				printed += put_int(va_arg(list, int));
+			else if (format[i] == 'b')
+				printed += put_binary(va_arg(list, unsigned int));
 			else
 				printed += _put(format[i]);
 		} else

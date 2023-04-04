@@ -16,5 +16,6 @@ int _printf(const char *format, ...);
 int _put(char c);
 int _puts(char *s);
 int put_int(int n);
+int put_binary(unsigned int n);
 
 #endif
