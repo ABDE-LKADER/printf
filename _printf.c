@@ -27,8 +27,7 @@ int _printf(const char *format, ...)
 				printed = put_int(va_arg(list, int));
 			else
 				printed += _put(format[i]);
-		}
-		else
+		} else
 			printed += _put(format[i]);
 	} va_end(list);
 	return (printed);
